@@ -10,8 +10,45 @@
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
     <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
     </script>
+       <style>
+        /* Add some styling for the code block and copy button */
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+       
+    </style>
   </head>
   <body class="bg-white antialiased">
     <%= @inner_content %>
+
+        <script>
+        function copyCodeToClipboard() {
+            // Get the code snippet element
+            var codeSnippet = document.getElementById('codeSnippet');
+
+            // Create a range and select the text within the code snippet
+            var range = document.createRange();
+            range.selectNode(codeSnippet);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            // Copy the selected text to the clipboard
+            try {
+                document.execCommand('copy');
+                alert('Code snippet copied to clipboard!');
+            } catch (err) {
+                console.error('Unable to copy code snippet to clipboard', err);
+            }
+
+            // Clear the selection
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+
   </body>
 </html>

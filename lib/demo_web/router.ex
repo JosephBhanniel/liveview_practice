@@ -20,6 +20,8 @@ defmodule DemoWeb.Router do
     get "/", PageController, :home
     live "/light", LightLive.Index, :index
     live "/travel", TravelLive.Aiports, :airports
+    live "/clock", ClockLive.Index, :index
+    live "/counter", CounterLive.Counter, :counter
 
   end
 
