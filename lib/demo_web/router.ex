@@ -22,7 +22,7 @@ defmodule DemoWeb.Router do
     live "/travel", TravelLive.Aiports, :airports
     live "/clock", ClockLive.Index, :index
     live "/counter", CounterLive.Counter, :counter
-
+    live "/home", HomeLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
